@@ -14,8 +14,41 @@
 #include "game.h"
 #include "command.h"
 
+/**
+   * @brief inicia el juego y comprueba que no haya errores
+   * @author Marcos Alonso
+   *
+   * 
+   * @param *game variable juego usada para crear el juego
+   * @param **gengine motor del juego
+	 * @param *file_name archivo desde el que se crea el juego
+	 * @return es 1 si hay error, es 0 si no hay errores
+   */
+
+
 int game_loop_init(Game *game, Graphic_engine **gengine, char *file_name);
+
+/**
+   * @brief ejecuta el juego
+   * @author Marcos Alonso 
+   * 
+   * @param game variable que contiene el juego
+   * @param *gengine motor usado para los graficos del juego
+   */
+
+
 void game_loop_run(Game game, Graphic_engine *gengine);
+
+/**
+   * @brief destruye el juego y los graficos creados
+   * @author Marcos Alonso
+   *
+   * 
+   * @param *gengine el motor de los graficos que se borran
+   * @param game el juego que se borra
+   */
+
+
 void game_loop_cleanup(Game game, Graphic_engine *gengine);
 
 int main(int argc, char *argv[])
@@ -38,14 +71,17 @@ int main(int argc, char *argv[])
   return 0;
 }
 
+// inicia el juego y comprueba que no hay errores
+
 int game_loop_init(Game *game, Graphic_engine **gengine, char *file_name)
 {
+	// error en el juego
   if (game_create_from_file(game, file_name) == ERROR)
   {
     fprintf(stderr, "Error while initializing game.\n");
     return 1;
   }
-
+	// error en el motor grafico
   if ((*gengine = graphic_engine_create()) == NULL)
   {
     fprintf(stderr, "Error while initializing graphic engine.\n");
@@ -55,6 +91,8 @@ int game_loop_init(Game *game, Graphic_engine **gengine, char *file_name)
 
   return 0;
 }
+
+// ejecuta el juego
 
 void game_loop_run(Game game, Graphic_engine *gengine)
 {
@@ -67,6 +105,8 @@ void game_loop_run(Game game, Graphic_engine *gengine)
     game_update(&game, command);
   }
 }
+
+// destruye el juego creado
 
 void game_loop_cleanup(Game game, Graphic_engine *gengine)
 {

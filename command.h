@@ -25,6 +25,14 @@ typedef enum enum_Command {
   NEXT,
   BACK} T_Command;
 
+/**
+20   * @brief obtiene la instruccion del usuario
+19   * @author Marcos Alonso
+		 *
+		 * @return el comando introducido
+12   */
+
+
 T_Command command_get_user_input();
 
 #endif

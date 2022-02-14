@@ -14,12 +14,16 @@
 
 #define CMD_LENGHT 30
 
+// variable bidimensional que almacena los comandos y su abreviacion
+
 char *cmd_to_str[N_CMD]
 [N_CMDT] = {{"", "No command"},
 			{"", "Unknown"},
 			{"e", "Exit"},
 			{"n", "Next"},
 			{"b", "Back"}};
+
+// obtiene la instrucción del usuario
 
 T_Command command_get_user_input()
 {
