@@ -31,8 +31,6 @@ typedef enum enum_Command {
 		 *
 		 * @return el comando introducido
 12   */
-
-
 T_Command command_get_user_input();
 
 #endif

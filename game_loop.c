@@ -24,8 +24,6 @@
 	 * @param *file_name archivo desde el que se crea el juego
 	 * @return es 1 si hay error, es 0 si no hay errores
    */
-
-
 int game_loop_init(Game *game, Graphic_engine **gengine, char *file_name);
 
 /**
@@ -35,8 +33,6 @@ int game_loop_init(Game *game, Graphic_engine **gengine, char *file_name);
    * @param game variable que contiene el juego
    * @param *gengine motor usado para los graficos del juego
    */
-
-
 void game_loop_run(Game game, Graphic_engine *gengine);
 
 /**
@@ -47,8 +43,6 @@ void game_loop_run(Game game, Graphic_engine *gengine);
    * @param *gengine el motor de los graficos que se borran
    * @param game el juego que se borra
    */
-
-
 void game_loop_cleanup(Game game, Graphic_engine *gengine);
 
 int main(int argc, char *argv[])

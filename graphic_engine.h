@@ -24,7 +24,6 @@ typedef struct _Graphic_engine Graphic_engine;
   * 
   * @return la estructura inicializada
   */
-
 Graphic_engine *graphic_engine_create();
 
 /**
@@ -36,7 +35,6 @@ Graphic_engine *graphic_engine_create();
   * 
   * @param ge una estructura Graphic_engine que quieres resetear
   */
-
 void graphic_engine_destroy(Graphic_engine *ge);
 
 /**
@@ -49,7 +47,6 @@ void graphic_engine_destroy(Graphic_engine *ge);
   * @param ge estructura usada para crear los graficos
   * @param game estructura usada para los datos del juego
   */
-
 void graphic_engine_paint_game(Graphic_engine *ge, Game *game);
 
 /**
@@ -57,7 +54,6 @@ void graphic_engine_paint_game(Graphic_engine *ge, Game *game);
   * @author Marcos Alonso
   *
   */
-
 void graphic_engine_write_command(Graphic_engine *ge, char *str);
 
 #endif

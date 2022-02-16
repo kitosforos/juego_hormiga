@@ -17,14 +17,85 @@
 /**
    Private functions
 */
+
+/**
+   * @brief añade un espacio al juego
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   * @param space el espacio que se añade
+   * @return si esta todo OK
+   */
 STATUS game_add_space(Game *game, Space *space);
+
+/**
+   * @brief obtiene la id de el espacio en el que se encuentra
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   * @param position tu posicion
+   * @return la id del espacio en el que se encuentra
+   */
 Id game_get_space_id_at(Game *game, int position);
+
+/**
+   * @brief cambia la localización del jugador
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   * @param id la id de la posición a la que vas a cambiar
+   * @return si esta todo OK
+   */
 STATUS game_set_player_location(Game *game, Id id);
+
+/**
+   * @brief cambia la localización del objeto
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   * @param id la id de la posición a la que vas a cambiar
+   * @return si esta todo OK
+   */
 STATUS game_set_object_location(Game *game, Id id);
 
+/**
+   * @brief ejecuta la accion del comando unknown
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   */
 void game_command_unknown(Game *game);
+
+/**
+   * @brief ejecuta la accion del comando exit
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   */
 void game_command_exit(Game *game);
+
+/**
+   * @brief ejecuta la accion del comando next
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   */
 void game_command_next(Game *game);
+
+/**
+   * @brief ejecuta la accion del comando back
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   */
 void game_command_back(Game *game);
 
 /**
@@ -81,7 +152,7 @@ STATUS game_destroy(Game *game)
   return OK;
 }
 
-
+//añade un espacio al juego
 
 STATUS game_add_space(Game *game, Space *space)
 {
@@ -106,6 +177,8 @@ STATUS game_add_space(Game *game, Space *space)
 
   return OK;
 }
+
+//obtiene la ID del espacio en el que se encuentra
 
 Id game_get_space_id_at(Game *game, int position)
 {
@@ -140,7 +213,7 @@ Space *game_get_space(Game *game, Id id)
   return NULL;
 }
 
-
+//cambia la localización del jugador
 
 STATUS game_set_player_location(Game *game, Id id)
 {
@@ -152,6 +225,8 @@ STATUS game_set_player_location(Game *game, Id id)
 
   game->player_location = id;
 }
+
+//cambia la localización del objeto
 
 STATUS game_set_object_location(Game *game, Id id)
 {
@@ -238,7 +313,7 @@ void game_print_data(Game *game)
   printf("=> Player location: %d\n", (int)game->player_location);
 }
 
-//establece que el juego termina
+//establece que el juego terminax
 
 BOOL game_is_over(Game *game)
 {
