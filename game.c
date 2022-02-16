@@ -213,14 +213,14 @@ STATUS game_set_player_location(Game *game, Id id)
   }
 
   game->player_location = id;
+
+  return OK;
 }
 
 //cambia la localización del objeto
 
 STATUS game_set_object_location(Game *game, Id id)
 {
-
-  int i = 0;
 
   if (id == NO_ID)
   {
