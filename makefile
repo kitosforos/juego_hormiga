@@ -1,9 +1,10 @@
 CC = gcc
-OBJ = command.o game.o game_loop.o graphic_engine.o space.o
+OBJ = command.o game.o game_loop.o graphic_engine.o space.o game_reader.o
 all: ejecutar clean
 ejecutar: $(OBJ) libscreen.a libscreen.h
 	$(CC) -o juego $(OBJ) -L/home/kitos/pp/seed-src -lscreen
-
+game_reader.o: game_reader.h game_reader.c
+	$(CC) -c game_reader.c
 command.o: command.h command.c
 	$(CC) -c command.c 
 game.o: game.h game.c

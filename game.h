@@ -14,6 +14,7 @@
 #include "command.h"
 #include "space.h"
 #include "types.h"
+#include "game_reader.h"
 
 typedef struct _Game
 {
@@ -22,6 +23,17 @@ typedef struct _Game
   Space *spaces[MAX_SPACES];
   T_Command last_cmd;
 } Game;
+
+/**
+   * @brief añade un espacio al juego
+   * @author Marcos Alonso
+   *
+   * 
+   * @param game el juego que contiene los datos
+   * @param space el espacio que se añade
+   * @return si esta todo OK
+   */
+STATUS game_add_space(Game *game, Space *space);
 
 /**
    * @brief inicializa un juego

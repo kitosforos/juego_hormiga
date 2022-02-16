@@ -19,17 +19,6 @@
 */
 
 /**
-   * @brief añade un espacio al juego
-   * @author Marcos Alonso
-   *
-   * 
-   * @param game el juego que contiene los datos
-   * @param space el espacio que se añade
-   * @return si esta todo OK
-   */
-STATUS game_add_space(Game *game, Space *space);
-
-/**
    * @brief obtiene la id de el espacio en el que se encuentra
    * @author Marcos Alonso
    *
